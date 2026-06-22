@@ -1,3 +1,11 @@
+/* =============================================
+   PRODUCTIONS SPECTRUM — 360 PANORAMA TOUR
+   Brand Palette:
+     Navy Deep:   #121A35
+     Gold:        #FDD55D
+     Cobalt:      #224E8B
+   ============================================= */
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -42,7 +50,7 @@ a, a:hover, a:active, a:visited {
   overflow: hidden;
 }
 
-/* ─── Title bar ─────────────────────────────────────────────────────── */
+/* ── Title Bar ─────────────────────────────── */
 
 #titleBar {
   position: absolute;
@@ -79,9 +87,12 @@ body.multiple-scenes.mobile #titleBar {
   height: 100%;
   line-height: 30px;
   padding: 5px;
-  /* ★ Deep navy header background */
+  /* 1 & 4 — navy background, gold text, uppercase */
   background-color: #121A35;
-  background-color: rgba(18,26,53,0.92);
+  color: #FDD55D;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -96,7 +107,7 @@ body.multiple-scenes.mobile #titleBar {
   line-height: 40px;
 }
 
-/* ─── Fullscreen toggle ──────────────────────────────────────────────── */
+/* ── Fullscreen Toggle ──────────────────────── */
 
 #fullscreenToggle {
   display: none;
@@ -106,9 +117,8 @@ body.multiple-scenes.mobile #titleBar {
   width: 40px;
   height: 40px;
   padding: 5px;
-  /* ★ Deep navy button */
-  background-color: #121A35;
-  background-color: rgba(18,26,53,0.85);
+  /* 3 — navy, slightly lighter for contrast */
+  background-color: #1e2a4a;
 }
 
 .mobile #fullscreenToggle {
@@ -126,6 +136,8 @@ body.fullscreen-enabled #fullscreenToggle {
   right: 5px;
   width: 30px;
   height: 30px;
+  /* Gold icon to match brand */
+  filter: invert(82%) sepia(52%) saturate(600%) hue-rotate(340deg) brightness(105%);
 }
 
 .mobile #fullscreenToggle .icon {
@@ -149,64 +161,14 @@ body.fullscreen-enabled #fullscreenToggle {
   display: none;
 }
 
-/* ─── Autorotate toggle ──────────────────────────────────────────────── */
+/* ── Autorotate Toggle ──────────────────────── */
+/* 6 — hidden; autorotate sits where fullscreen used to be offset */
 
 #autorotateToggle {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  padding: 5px;
-  /* ★ Deep navy button */
-  background-color: #121A35;
-  background-color: rgba(18,26,53,0.85);
+  display: none; /* 6: remove screen controls — autorotate hidden */
 }
 
-.mobile #autorotateToggle {
-  width: 50px;
-  height: 50px;
-}
-
-body.fullscreen-enabled #autorotateToggle {
-  right: 40px;
-}
-
-body.fullscreen-enabled.mobile #autorotateToggle {
-  right: 50px;
-}
-
-#autorotateToggle .icon {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 30px;
-  height: 30px;
-}
-
-.mobile #autorotateToggle .icon {
-  top: 10px;
-  right: 10px;
-}
-
-#autorotateToggle .icon.on {
-  display: none;
-}
-
-#autorotateToggle .icon.off {
-  display: block;
-}
-
-#autorotateToggle.enabled .icon.on {
-  display: block;
-}
-
-#autorotateToggle.enabled .icon.off {
-  display: none;
-}
-
-/* ─── Scene list toggle ──────────────────────────────────────────────── */
+/* ── Scene List Toggle ──────────────────────── */
 
 #sceneListToggle {
   position: absolute;
@@ -215,9 +177,8 @@ body.fullscreen-enabled.mobile #autorotateToggle {
   width: 40px;
   height: 40px;
   padding: 5px;
-  /* ★ Deep navy button */
+  /* 3 — navy */
   background-color: #121A35;
-  background-color: rgba(18,26,53,0.85);
 }
 
 .mobile #sceneListToggle {
@@ -231,6 +192,7 @@ body.fullscreen-enabled.mobile #autorotateToggle {
   left: 15px;
   width: 100%;
   line-height: 30px;
+  color: #FDD55D; /* 4 — gold text */
 }
 
 #sceneListToggle .icon {
@@ -239,6 +201,8 @@ body.fullscreen-enabled.mobile #autorotateToggle {
   right: 5px;
   width: 30px;
   height: 30px;
+  /* Gold tint for hamburger icon */
+  filter: invert(82%) sepia(52%) saturate(600%) hue-rotate(340deg) brightness(105%);
 }
 
 .mobile #sceneListToggle .icon {
@@ -262,7 +226,7 @@ body.fullscreen-enabled.mobile #autorotateToggle {
   display: none;
 }
 
-/* ─── Scene list panel ───────────────────────────────────────────────── */
+/* ── Scene List Panel ───────────────────────── */
 
 #sceneList {
   position: absolute;
@@ -284,9 +248,8 @@ body.fullscreen-enabled.mobile #autorotateToggle {
 
 #sceneList .scenes {
   width: 100%;
-  /* ★ Deep navy side panel */
+  /* 3 — navy panel */
   background-color: #121A35;
-  background-color: rgba(18,26,53,0.92);
 }
 
 .mobile #sceneList {
@@ -311,6 +274,9 @@ body.fullscreen-enabled.mobile #autorotateToggle {
   display: block;
   width: 100%;
   height: 30px;
+  border-left: 3px solid transparent;
+  -webkit-transition: border-color 0.2s, background-color 0.2s;
+  transition: border-color 0.2s, background-color 0.2s;
 }
 
 .mobile #sceneList .scene {
@@ -325,6 +291,10 @@ body.fullscreen-enabled.mobile #autorotateToggle {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8em;
 }
 
 .mobile #sceneList .scene .text {
@@ -332,29 +302,36 @@ body.fullscreen-enabled.mobile #autorotateToggle {
 }
 
 .no-touch #sceneList .scene:hover {
-  /* ★ Slightly lighter navy on hover */
-  background-color: #1e2d58;
-  background-color: rgba(30,45,88,0.85);
+  background-color: rgba(253, 213, 93, 0.12);
+  border-left-color: #FDD55D;
 }
 
+/* 5 — active scene uses gold highlight instead of grey */
 #sceneList .scene.current {
-  /* ★ Active scene highlight — gold accent */
-  background-color: #FDD55D;
-  background-color: rgba(253,213,93,0.20);
+  background-color: rgba(253, 213, 93, 0.18);
+  border-left-color: #FDD55D;
 }
 
-body.single-scene #sceneList, body.single-scene #sceneListToggle {
+#sceneList .scene.current .text {
+  color: #FDD55D;
+  font-weight: 700;
+}
+
+/* Hide scene list when only a single scene exists */
+body.single-scene #sceneList,
+body.single-scene #sceneListToggle {
   display: none;
 }
 
-/* ─── Link hotspots ──────────────────────────────────────────────────── */
+/* ── Link Hotspot ───────────────────────────── */
+/* 2 — cobalt base, gold accents replacing white */
 
 .link-hotspot {
   width: 60px;
   height: 60px;
   margin-left: -30px;
   margin-top: -30px;
-  opacity: 0.9;
+  opacity: 0.92;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
@@ -372,8 +349,17 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   width: 100%;
   height: 100%;
   cursor: pointer;
-  /* ★ Blue link hotspot tint */
-  filter: drop-shadow(0 0 4px #224E8B);
+  /* 2 — recolour the SVG: cobalt body, gold arrows/white parts */
+  filter:
+    invert(25%) sepia(60%) saturate(700%) hue-rotate(195deg) brightness(85%)
+    drop-shadow(0 0 4px rgba(34, 78, 139, 0.6));
+}
+
+/* Gold pulse ring on hover for link hotspots */
+.no-touch .link-hotspot:hover .link-hotspot-icon {
+  filter:
+    invert(82%) sepia(52%) saturate(600%) hue-rotate(340deg) brightness(105%)
+    drop-shadow(0 0 6px rgba(253, 213, 93, 0.7));
 }
 
 .link-hotspot-tooltip {
@@ -382,27 +368,23 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   top: 14px;
 
   margin-left: 3px;
-
-  font-size: 16px;
-
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   max-width: 300px;
-
   padding: 8px 10px;
+  border-radius: 4px;
 
-  border-radius: 5px;
-
-  /* ★ Blue tooltip background */
+  /* 2 — cobalt tooltip, gold text */
   background-color: #224E8B;
-  background-color: rgba(34,78,139,0.92);
-
-  color: #fff;
+  color: #FDD55D;
+  border: 1px solid rgba(253, 213, 93, 0.3);
 
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-
   cursor: pointer;
-
   opacity: 0;
 
   -ms-transform: translateX(-8px);
@@ -444,11 +426,12 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   display: block;
 }
 
-/* ─── Info hotspots ──────────────────────────────────────────────────── */
+/* ── Info Hotspot ───────────────────────────── */
+/* 1 — gold; 7 — "?" icon in cobalt */
 
 .info-hotspot {
   line-height: 1.2em;
-  opacity: 0.9;
+  opacity: 0.92;
   -webkit-transition: opacity 0.2s 0.2s;
   transition: opacity 0.2s 0.2s;
 }
@@ -463,11 +446,12 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   opacity: 1;
 }
 
+/* Header pill — gold background */
 .info-hotspot .info-hotspot-header {
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  /* ★ Gold info hotspot header */
+  /* 1 — gold */
   background-color: #FDD55D;
   cursor: pointer;
   -webkit-transition: width 0.3s ease-in-out 0.5s,
@@ -485,6 +469,7 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
 .desktop.no-touch .info-hotspot .info-hotspot-header:hover {
   width: 260px;
   border-radius: 5px;
+  background-color: #FDD55D;
   -webkit-transition: width 0.3s ease-in-out,
                       border-radius 0.3s ease-in-out;
   transition: width 0.3s ease-in-out,
@@ -498,6 +483,7 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  background-color: #FDD55D;
   -webkit-transition: width 0.3s ease-in-out,
                       border-radius 0.3s ease-in-out;
   transition: width 0.3s ease-in-out,
@@ -507,6 +493,11 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
 .info-hotspot .info-hotspot-icon-wrapper {
   width: 40px;
   height: 40px;
+  /* 7 — replace the "i" with a "?" rendered via pseudo-element */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobile .info-hotspot .info-hotspot-icon-wrapper {
@@ -514,10 +505,24 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   height: 50px;
 }
 
+/* Hide the default SVG icon and draw a "?" instead */
 .info-hotspot .info-hotspot-icon {
-  width: 90%;
-  height: 90%;
-  margin: 5%;
+  display: none; /* replaced by CSS pseudo-element below */
+}
+
+.info-hotspot .info-hotspot-icon-wrapper::after {
+  content: "?";
+  /* 7 — cobalt color on gold background */
+  color: #224E8B;
+  font-size: 22px;
+  font-weight: 900;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.mobile .info-hotspot .info-hotspot-icon-wrapper::after {
+  font-size: 26px;
 }
 
 .info-hotspot .info-hotspot-title-wrapper {
@@ -528,20 +533,16 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   height: 40px;
   padding: 0;
   overflow: hidden;
-  -webkit-transition: width 0s 0.4s,
-                      padding 0s 0.4s;
-  transition: width 0s 0.4s,
-              padding 0s 0.4s;
+  -webkit-transition: width 0s 0.4s, padding 0s 0.4s;
+  transition: width 0s 0.4s, padding 0s 0.4s;
 }
 
 .desktop .info-hotspot.visible .info-hotspot-title-wrapper,
 .desktop.no-touch .info-hotspot .info-hotspot-header:hover .info-hotspot-title-wrapper {
   width: 220px;
   padding: 0 5px;
-  -webkit-transition: width 0s 0.4s,
-                      padding 0s 0.4s;
-  transition: width 0s 0.4s,
-              padding 0s 0.4s;
+  -webkit-transition: width 0s 0.4s, padding 0s 0.4s;
+  transition: width 0s 0.4s, padding 0s 0.4s;
 }
 
 .info-hotspot .info-hotspot-title-wrapper:before {
@@ -554,8 +555,12 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
 .info-hotspot .info-hotspot-title {
   display: inline-block;
   vertical-align: middle;
-  /* ★ Dark text on gold header for legibility */
+  /* 1 — cobalt text on gold pill */
   color: #121A35;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8em;
 
   -moz-user-select: text;
   -webkit-user-select: text;
@@ -563,6 +568,7 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   user-select: text;
 }
 
+/* Close button on desktop expanded hotspot */
 .info-hotspot .info-hotspot-close-wrapper {
   position: absolute;
   left: 260px;
@@ -570,8 +576,8 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   height: 40px;
   width: 40px;
   border-top-right-radius: 5px;
-  /* ★ Slightly darker gold for close button */
-  background-color: #e8bc3a;
+  /* 1 — slightly darker gold */
+  background-color: #e8c048;
   visibility: hidden;
   -ms-transform: perspective(200px) rotateY(90deg);
   -webkit-transform: perspective(200px) rotateY(90deg);
@@ -608,8 +614,11 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   width: 70%;
   height: 70%;
   margin: 15%;
+  /* Cobalt close × on gold button */
+  filter: invert(25%) sepia(60%) saturate(700%) hue-rotate(195deg) brightness(85%);
 }
 
+/* Info text panel — 1: gold-accented */
 .info-hotspot .info-hotspot-text {
   position: absolute;
   width: 300px;
@@ -618,13 +627,12 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   top: 40px;
   left: 0;
   padding: 10px;
-  /* ★ Gold info text box */
-  background-color: #FDD55D;
-  background-color: rgba(253,213,93,0.95);
-  /* ★ Dark text for readability on gold */
-  color: #121A35;
+  /* 1 — navy background with gold top border */
+  background-color: #121A35;
+  border-top: 2px solid #FDD55D;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+  color: #fff;
   overflow-y: auto;
   visibility: hidden;
   -ms-transform: perspective(200px) rotateX(-89.999deg);
@@ -663,7 +671,7 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
               visibility 0s 0s;
 }
 
-/* ─── Info hotspot modal (mobile) ────────────────────────────────────── */
+/* ── Info Hotspot Modal (Mobile) ────────────── */
 
 .desktop .info-hotspot-modal {
   display: none;
@@ -677,7 +685,7 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   height: 100%;
   overflow: hidden;
   z-index: 11000 !important;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(18, 26, 53, 0.85);
   line-height: 1.2em;
   opacity: 0;
   visibility: hidden;
@@ -696,6 +704,7 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
               visibility 0s 0s;
 }
 
+/* Modal header — gold */
 .info-hotspot-modal .info-hotspot-header {
   position: absolute;
   top: 60px;
@@ -703,9 +712,7 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   right: 10px;
   width: auto;
   height: 50px;
-  /* ★ Gold modal header */
   background-color: #FDD55D;
-  background-color: rgba(253,213,93,0.95);
   opacity: 0;
   -webkit-transition: opacity 0.3s ease-in-out 0.2s;
   transition: opacity 0.3s ease-in-out 0.2s;
@@ -720,12 +727,24 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
 .info-hotspot-modal .info-hotspot-icon-wrapper {
   width: 50px;
   height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
+/* 7 — "?" in cobalt on modal too */
 .info-hotspot-modal .info-hotspot-icon {
-  width: 90%;
-  height: 90%;
-  margin: 5%;
+  display: none;
+}
+
+.info-hotspot-modal .info-hotspot-icon-wrapper::after {
+  content: "?";
+  color: #224E8B;
+  font-size: 26px;
+  font-weight: 900;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1;
 }
 
 .info-hotspot-modal .info-hotspot-title-wrapper {
@@ -748,8 +767,10 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
 .info-hotspot-modal .info-hotspot-title {
   display: inline-block;
   vertical-align: middle;
-  /* ★ Dark text on gold for legibility */
   color: #121A35;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 
   -moz-user-select: text;
   -webkit-user-select: text;
@@ -757,15 +778,14 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   user-select: text;
 }
 
+/* Modal close button — darker gold */
 .info-hotspot-modal .info-hotspot-close-wrapper {
   position: absolute;
   top: 0;
   right: 0;
   width: 50px;
   height: 50px;
-  /* ★ Darker gold close button */
-  background-color: #e8bc3a;
-  background-color: rgba(232,188,58,0.95);
+  background-color: #e8c048;
   cursor: pointer;
 }
 
@@ -773,8 +793,10 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   width: 70%;
   height: 70%;
   margin: 15%;
+  filter: invert(25%) sepia(60%) saturate(700%) hue-rotate(195deg) brightness(85%);
 }
 
+/* Modal text — navy panel */
 .info-hotspot-modal .info-hotspot-text {
   position: absolute;
   top: 110px;
@@ -782,11 +804,9 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   left: 10px;
   right: 10px;
   padding: 10px;
-  /* ★ Gold modal text box */
-  background-color: #FDD55D;
-  background-color: rgba(253,213,93,0.92);
-  /* ★ Dark text for readability */
-  color: #121A35;
+  background-color: #121A35;
+  border-top: 2px solid #FDD55D;
+  color: #fff;
   overflow-y: auto;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease-in-out;
@@ -804,54 +824,9 @@ body.single-scene #sceneList, body.single-scene #sceneListToggle {
   transition: opacity 0.3s ease-in-out 0.4s;
 }
 
-/* ─── View control buttons ───────────────────────────────────────────── */
+/* ── View Control Buttons — REMOVED ─────────── */
+/* 6: all view control buttons are hidden */
 
 .viewControlButton {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 40px;
-  height: 40px;
-  padding: 5px;
-  /* ★ Deep navy control buttons */
-  background-color: #121A35;
-  background-color: rgba(18,26,53,0.85);
-}
-
-body.view-control-buttons .viewControlButton {
-  display: block;
-}
-
-@media (max-width: 600px) {
-  body.view-control-buttons .viewControlButton {
-    display: none;
-  }
-}
-
-.viewControlButton .icon {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 30px;
-  height: 30px;
-}
-
-.viewControlButton-1 {
-  margin-left: -145px;
-}
-.viewControlButton-2 {
-  margin-left: -95px;
-}
-.viewControlButton-3 {
-  margin-left: -45px;
-}
-.viewControlButton-4 {
-  margin-left: 5px;
-}
-.viewControlButton-5 {
-  margin-left: 55px;
-}
-.viewControlButton-6 {
-  margin-left: 105px;
+  display: none !important;
 }
