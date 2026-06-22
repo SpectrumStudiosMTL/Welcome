@@ -60,10 +60,11 @@
     document.body.classList.add('tooltip-fallback');
   }
 
-  // Viewer options.
+ // Viewer options.
   var viewerOpts = {
     controls: {
-      mouseViewMode: data.settings.mouseViewMode
+      mouseViewMode: data.settings.mouseViewMode,
+      scrollZoom: false
     }
   };
 
